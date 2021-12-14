@@ -18,4 +18,3 @@ spec:
 
   selector:
     app.kubernetes.io/name: sainte-city-run2021
-    app.kubernetes.io/instance: pwnthenet 
