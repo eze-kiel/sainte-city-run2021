@@ -152,10 +152,12 @@ func parseParticipantInfos(line string) participant {
 
 func showParticipantInfos(p participant, rank, tot int) {
 	fmt.Printf(`
+	
 Name: %s
 Bib:  %s
 Sex:  %s
 Time: %s
 Rank: %d/%d
+
 	`, p.name, p.bib, p.sex, p.time, rank, tot)
 }
