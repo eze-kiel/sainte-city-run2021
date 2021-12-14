@@ -25,6 +25,7 @@ FROM gcr.io/distroless/base-debian10
 WORKDIR /app
 
 COPY --from=builder /build/server .
+COPY --from=builder /build/views .
 
 EXPOSE 8080
 
