@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: sainte-city-run2021
+  labels:
+    app.kubernetes.io/name: sainte-city-run2021
+spec:
+  type: ClusterIP
+  ports:
+    - port: 80
+      name: http
+      targetPort: http
+      protocol: TCP
+    - port: 443
+      name: https
+      targetPort: http
+      protocol: TCP
+
+  selector:
+    app.kubernetes.io/name: sainte-city-run2021
+    app.kubernetes.io/instance: pwnthenet 
