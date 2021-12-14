@@ -18,15 +18,12 @@ RUN go build \
     strip server && \
     /usr/local/bin/upx -9 server
 
-RUN setcap cap_net_raw+ep server
-
 FROM gcr.io/distroless/base-debian10
 
-WORKDIR /app
+WORKDIR /
 
-COPY --from=builder /build/server .
-COPY --from=builder /build/views .
+COPY --from=builder /build/ .
 
 EXPOSE 8080
 
-ENTRYPOINT [ "/app/server" ]
+ENTRYPOINT [ "/server" ]
