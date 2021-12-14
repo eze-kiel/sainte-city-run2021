@@ -56,6 +56,7 @@ func rankPage(w http.ResponseWriter, r *http.Request) {
 		log.Fatalf("Can not parse rank page : %v", err)
 	}
 	bibFromForm := r.FormValue("bib")
+	fmt.Printf("input received: %s\n", bibFromForm)
 
 	fd, err := os.Open("input.txt")
 	if err != nil {
