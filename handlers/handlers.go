@@ -80,7 +80,14 @@ func rankPage(w http.ResponseWriter, r *http.Request) {
 	for i, p := range all {
 		bibWanted, err := strconv.Atoi(bibFromForm)
 		if err != nil {
-			panic(err)
+			if resp == (Response{}) {
+				resp.Name = "n/a"
+				resp.Bib = "n/a"
+				resp.Sex = "n/a"
+				resp.Time = "n/a"
+				resp.Rank = "n/a"
+			}
+			break
 		}
 		bib, err := strconv.Atoi(p.bib)
 		if err != nil {
