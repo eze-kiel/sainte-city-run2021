@@ -97,6 +97,14 @@ func rankPage(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 
+	if resp == (Response{}) {
+		resp.Name = "n/a"
+		resp.Bib = "n/a"
+		resp.Sex = "n/a"
+		resp.Time = "n/a"
+		resp.Rank = "n/a"
+	}
+
 	err = tmpl.Execute(w, resp)
 	if err != nil {
 		log.Fatalf("Can not execute templates for rank page : %v", err)
